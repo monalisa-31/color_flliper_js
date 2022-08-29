@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <body><nav>
+        <div class="nav-center">
+            <h2>Color Flippers</h2>
+        </div>
+    </nav>
+</body>
+    <meta charset="utf-8">
+    <title>COLOR FLIPPER </title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: content-box;
+        }
+        body{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        .container{
+            width: 40%;
+            text-align: center;
+        }
+        h1{
+            background: dimgray;
+            padding: 10px 30px;
+            color: whitesmoke;
+            border-radius: 10px;
+        }
+        #btn{
+            padding: 10px 30px ;
+            color: rgb(3, 27, 248);
+            outline: black;
+            cursor: pointer;
+            background: rgb(1, 175, 250);
+            margin-top: 20px;
+            font: size 2em;
+            letter-spacing: 4px; ;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> :Background color: <span class="color"></span> </h1>
+        <button id="btn"> Click Here For Saw Magic</button>
+    </div>
+    <script type="text/javascript">
+        const colorsArray =["Tomato","blue","green","pink","purple","GreenYellow","LightCoral","Coral","orange","Chartreuse","skyblue","Violet","DodgerBlue","yellow","white","MediumSeaGreen"];
+        const btn = document.getElementById("btn");
+        const color = document.querySelector('.color');
+        btn.addEventListener("click",function(){
+            const randomNumber=getRandomNumber();
+            document.body.style.backgroundColor=colorsArray[
+                randomNumber];
+            color.innerHTML=colorsArray[randomNumber];
+        });
+        function getRandomNumber(){
+          return Math.floor(Math.random()*colorsArray.length)  
+        }
+
+
+
+    </script>
+</body>
+</html>
